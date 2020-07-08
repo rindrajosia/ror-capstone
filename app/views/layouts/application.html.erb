@@ -11,6 +11,10 @@
 
   <body>
     <p class="flash"><%= flash.notice %></p>
+    <% if session[:auth] %>
+      <h3>Welcome: <%= session[:auth]["name"] %></h3>
+      <li><h3><%= link_to "logout", destroy_session_path, data:{method: :delete} %></h3></li>
+    <% end %>
     <%= yield %>
   </body>
 </html>
