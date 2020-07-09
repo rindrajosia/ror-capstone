@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :create_categories
   def login
     @user = User.new
   end
@@ -7,10 +8,10 @@ class SessionsController < ApplicationController
     @current_user = User.where(name: user_params[:name]).first
     if @current_user
       session[:auth] = @current_user
-      redirect_to new_user_path
+      redirect_to articles_path
     else
       flash.notice = 'Identifiant incorrect'
-      render 'login'
+      redirect_to new_user_path
     end
   end
 

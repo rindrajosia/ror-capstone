@@ -1,0 +1,15 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+<% if !@popular_article.nil? %>
+  <%= @popular_article.title %><br>
+  <%= image_tag @popular_article.image.url(:medium) %><br>
+  <%= @popular_article.text.truncate(200)%><br>
+<% end %>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, article_path(id: category.id), method: :get, class: 'profile-link'%><br>
+  <% if !category.articles.last.nil? %>
+    <%= image_tag category.articles.last.image.url(:medium)%><br>
+    <%= category.articles.last.title %><br>
+  <% end %>
+ <% end %>

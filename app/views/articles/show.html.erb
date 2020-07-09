@@ -1,0 +1,11 @@
+<h1>Articles#show</h1>
+<p>Find me in app/views/articles/show.html.erb</p>
+<% @cat.each do |art| %>
+  Title: <%= art.title %><br>
+  <%= image_tag art.image.url(:medium)%><br>
+  Text: <%= art.text.truncate(200)%><br>
+  Author: <%= art.author.name %><br>
+  <button type="button" class="btn btn-primary">
+      <%= link_to 'Vote', votes_path(article_id: art.id), method: :post, class: 'profile-link'%>
+  </button>
+ <% end %>
