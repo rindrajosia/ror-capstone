@@ -1,15 +1,68 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
-<% if !@popular_article.nil? %>
-  <%= @popular_article.title %><br>
-  <%= image_tag @popular_article.image.url(:medium) %><br>
-  <%= @popular_article.text.truncate(200)%><br>
-<% end %>
+  <header class="container-fluid-rj">
+       <nav class="show-rj row-rj flex-row-rj flex-justify-between-rj flex-align-center-rj col-md-12">
+          <ul class="flex-row-rj col-md-4">
+            <li><a href="#">Welcome: <%= session[:auth]["name"] %></a></li>
+          </ul>
+ 	 <ul class="flex-row-rj col-md-4">
+            <li><%= link_to "HOME", articles_path%></li>
+            <li><%= link_to "WRITE AN ARTICLE", new_article_path%></li>
+          </ul>
+ 	 <ul class="flex-row-rj col-md-4">
+            <li><%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %></li>
+          </ul>
+        </nav>
+</header>
 
-<% @categories.each do |category| %>
-  <%= link_to category.name, article_path(id: category.id), method: :get, class: 'profile-link'%><br>
-  <% if !category.articles.last.nil? %>
-    <%= image_tag category.articles.last.image.url(:medium)%><br>
-    <%= category.articles.last.title %><br>
-  <% end %>
- <% end %>
+<main class="container-fluid-rj">
+    <div class="cover col-md-8 col-sm-12 row-rj">
+      <% if !@popular_article.nil? %>
+      <div class="cover-left flex-column-rj flex-justify-end-rj col-md-12 col-sm-12" style="background:
+linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+url('<%= @popular_article.image.url %>'); background-repeat: no-repeat; background-position: top center; background-size: cover;">
+        <div class="description">
+          <h2 class="title-logo">
+            <%= @popular_article.title %>
+          </h2>
+          <p class="title-logo-bottom"><%= @popular_article.text.truncate(200)%></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </main>
+
+  <div class="container-rj row-slide-rj deals margin-bottom">
+        <% @categories.each do |category| %>
+              <div class="col-sm-12 col-md-6 col-xl-3">
+                    <div class="gallery-latest app-item">
+                      <ul class="list-latest">
+                                <li>
+                                  <div class="image image-relative">
+                                    <% if !category.articles.last.nil? %>
+                                      <%= image_tag category.articles.last.image.url, class:'bg gradient img-latest-news'%>
+                                    <% end %>
+                                      <div class="header-apps flex-column-rj flex-justify-between-rj">
+                                        <h5><%= link_to category.name, article_path(id: category.id), method: :get, class:'cat-title'%></h5>
+                                        <div class="description-app">
+
+                                          <% if !category.articles.last.nil? %>
+                                            <h5><%= category.articles.last.title %></h5>
+                                          <% end %>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+        <% end %>
+  </div>
+
+  <footer>
+
+    <div class="footer-bottom flex-row-rj flex-justify-center-rj flex-align-center-rj">
+      <div>
+        <span> Privacy Policy Terms and Conditions ©</span>
+        <span>Copyright 2022. All rights reserved</span>
+      </div>
+    </div>
+</footer>

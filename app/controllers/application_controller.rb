@@ -5,7 +5,13 @@ class ApplicationController < ActionController::Base
     if session[:auth]
       @current_user = User.find(session[:auth]['id'])
     else
-      redirect_to new_session_path
+      redirect_to new_user_path
+    end
+  end
+
+  def signin
+    if session[:auth]
+      redirect_to articles_path
     end
   end
 

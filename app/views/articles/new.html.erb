@@ -1,40 +1,68 @@
-<%= form_for(@article, html: {multipart: true}) do |f| %>
+<header class="container-fluid-rj">
+     <nav class="show-rj row-rj flex-row-rj flex-justify-between-rj flex-align-center-rj col-md-12">
+        <ul class="flex-row-rj col-md-4">
+          <li><a href="#">Welcome: <%= session[:auth]["name"] %></a></li>
+        </ul>
+ <ul class="flex-row-rj col-md-4">
+          <li><%= link_to "HOME", articles_path%></li>
+          <li><%= link_to "WRITE AN ARTICLE", new_article_path%></li>
+        </ul>
+ <ul class="flex-row-rj col-md-4">
+          <li><%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %></li>
+        </ul>
+      </nav>
+</header>
 
-<ul>
-<% @article.errors.full_messages.each do |error| %>
-  <li><%= error %></li>
-<% end %>
-</ul>
+<div class="container">
+  <%= form_for(@article, html: {multipart: true}) do |f| %>
+<h1>Write an article</h1>
+  <ul>
+  <% @article.errors.full_messages.each do |error| %>
+    <li class="warning"><%= error %></li>
+  <% end %>
+  </ul>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </p>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title, class:'input_form' %>
+    </p>
 
-  <p>
-    <%= f.label :image, "Attach an Image" %><br />
-    <%= f.file_field :image %>
-  </p>
+    <p>
+      <%= f.label :text %><br />
+      <%= f.text_area :text %>
+    </p>
 
-
-  <p>
-    Categories: (Choose one categorie)
-  </p>
-  <p>
-    <input type="checkbox" name="tag_ids[]" value="1" />Tv
-    <input type="checkbox" name="tag_ids[]" value="2" />Radio
-    <input type="checkbox" name="tag_ids[]" value="3" />Car
-    <input type="checkbox" name="tag_ids[]" value="4" />Train
-  </p>
+    <p class="space">
+      <%= f.label :image, "Attach an Image" %><br />
+      <%= f.file_field :image %>
+    </p>
 
 
-  <div class="proceed_button">
-    <%= button_tag(type: 'submit', class: "proceed", id: 'validForm') do%>
-      <span>Create Article</span>
-    <% end %>
+    <p class="space">
+      Categories: (Choose one categorie)<br />
+
+      <input type="checkbox" name="tag_ids[]" value="1" />Tv
+      <input type="checkbox" name="tag_ids[]" value="2" />Radio
+      <input type="checkbox" name="tag_ids[]" value="3" />Car
+      <input type="checkbox" name="tag_ids[]" value="4" />Train
+    </p>
+
+
+    <div class="proceed_button">
+      <%= button_tag(type: 'submit', class: "proceed", id: 'validForm') do%>
+        <span>Create Article</span>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<footer>
+
+  <div class="footer-bottom flex-row-rj flex-justify-center-rj flex-align-center-rj">
+    <div>
+      <span> Privacy Policy Terms and Conditions ©</span>
+      <span>Copyright 2022. All rights reserved</span>
+    </div>
   </div>
-<% end %>
+</footer>

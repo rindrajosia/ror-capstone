@@ -9,7 +9,7 @@ class VotesController < ApplicationController
       else
         flash.notice = "You can't vote twice the same article"
       end
-      redirect_to articles_path
+      redirect_to article_path(id: params[:category_id])
     end
 
     def show

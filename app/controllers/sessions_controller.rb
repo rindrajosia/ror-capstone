@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :create_categories
+  before_action :signin
   def login
     @user = User.new
   end
@@ -11,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to articles_path
     else
       flash.notice = 'Identifiant incorrect'
-      redirect_to new_user_path
+      redirect_to new_session_path
     end
   end
 

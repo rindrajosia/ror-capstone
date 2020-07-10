@@ -38,16 +38,13 @@ class ArticlesController < ApplicationController
 
   def show
     @cat = list(params[:id])
+    @category_id = params[:id]
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text, :image)
-  end
-
-  def categ
-    Categorie.first.articles.last
   end
 
   def list(id)

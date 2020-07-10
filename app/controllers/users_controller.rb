@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :create_categories
+  before_action :signin
   def new
       @user = User.new
-      @current_user = current_user
     end
 
     def create
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
       if @user.save
         session[:auth] = @user
-        redirect_to new_user_path
+        redirect_to articles_path
         flash.notice = "User '#{@user.name}' Saved!"
       else
         render :new
