@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   before_action :create_categories
-  before_action :signin
   def login
     @user = User.new
   end
