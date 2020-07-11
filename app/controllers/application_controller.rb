@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def signin
+    if session[:auth]
+      redirect_to articles_path
+    end
+  end
 
 
   def create_categories

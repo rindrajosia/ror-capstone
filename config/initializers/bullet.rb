@@ -1,4 +1,5 @@
-Rails.application.config.after_initialize do
-  Bullet.enable = true
-  Bullet.alert = true
+if defined? Bullet
+    Bullet.enable = true
+    # Bullet.alert = true
+    Bullet.alert = true
 end
