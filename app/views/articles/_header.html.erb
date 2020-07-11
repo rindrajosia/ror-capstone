@@ -1,0 +1,14 @@
+<header class="container-fluid-rj">
+     <nav class="show-rj row-rj flex-row-rj flex-justify-between-rj flex-align-center-rj col-md-12">
+        <ul class="flex-row-rj col-md-4">
+          <li><a href="#">Welcome: <%= session[:auth]["name"] %></a></li>
+        </ul>
+ <ul class="flex-row-rj col-md-4">
+          <li><%= link_to "HOME", articles_path%></li>
+          <li><%= link_to "WRITE AN ARTICLE", new_article_path%></li>
+        </ul>
+ <ul class="flex-row-rj col-md-4">
+          <li><%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %></li>
+        </ul>
+      </nav>
+</header>

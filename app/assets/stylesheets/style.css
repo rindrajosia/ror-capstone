@@ -1,18 +1,11 @@
-body
-{
+body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background: #34495e;
 }
 
-*
-{
-  box-sizing: border-box;
-}
-
-.box
-{
+.box {
   width: 350px;
   padding: 40px;
   position: absolute;
@@ -23,15 +16,13 @@ body
   text-align: center;
 }
 
-.box h1
-{
+.box h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.box input[type="text"]
-{
+.box input[type="text"] {
   background: none;
   display: block;
   margin: 20px auto;
@@ -45,14 +36,12 @@ body
   transition: 0.25s;
 }
 
-.box input[type="text"]:focus
-{
+.box input[type="text"]:focus {
   width: 280px;
   border-color: #2ecc71;
 }
 
-.box input[type="submit"]
-{
+.box input[type="submit"] {
   background: none;
   display: block;
   margin: 20px auto;
@@ -67,16 +56,13 @@ body
   cursor: pointer;
 }
 
-.box input[type="submit"]:hover
-{
+.box input[type="submit"]:hover {
   background: #2ecc71;
 }
 
-.warning
-{
+.warning {
   color: red;
 }
-
 
 .container {
   width: 500px;
@@ -88,7 +74,9 @@ body
   margin-top: 100px;
 }
 
-.input_form, select, textarea {
+.input_form,
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -100,7 +88,7 @@ body
 }
 
 .proceed {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -121,12 +109,49 @@ header {
   z-index: 999;
 }
 
-
 /* third nav */
+.title-logo-bottom,
+.cover a {
+  font-family: maquette, Arial, serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #919191;
+}
 
 header nav:nth-child(1) {
   background-color: #fefefe;
   height: 40px;
+}
+
+.latest-new-header a {
+  color: rgb(255, 68, 34);
+}
+
+.gallery-item a,
+.gallery-deals a {
+  color: black;
+}
+
+.list-latest-header li a {
+  font-family: "maquette", Arial, serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgb(91, 91, 91);
+}
+
+.latest-new-header a:hover {
+  color: black;
+}
+
+.gallery-item a:hover,
+.gallery-deals a:hover {
+  color: rgb(255, 68, 34);
+}
+
+.list-latest-header li a:hover {
+  color: black;
 }
 
 header nav:nth-child(1) ul li a:not(.last) {
@@ -162,6 +187,23 @@ header nav:nth-child(1) ul li button {
 header nav:nth-child(1) ul li button:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.title-logo-bottom img {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 15px;
+  vertical-align: middle;
+}
+
+.header-latest-header img {
+  display: block;
+  width: 95px;
+  height: 94px;
+}
+
+.footer-bottom span img {
+  height: 7px;
 }
 
 header nav:nth-child(1) ul li img {
@@ -221,22 +263,6 @@ main {
   margin-bottom: 10px;
 }
 
-.title-logo-bottom,
-.cover a {
-  font-family: maquette, Arial, serif;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  color: #919191;
-}
-
-.title-logo-bottom img {
-  margin-left: 5px;
-  margin-right: 5px;
-  width: 15px;
-  vertical-align: middle;
-}
-
 @media (max-width: 768px) {
   .cover-right,
   .cover-left {
@@ -265,29 +291,11 @@ main {
   font-weight: 700;
 }
 
-.latest-new-header a {
-  color: rgb(255, 68, 34);
-}
-
-.latest-new-header a:hover {
-  color: black;
-}
-
 .gallery-item,
 .gallery-deals,
 .gallery-latest {
   width: 100%;
   height: 100%;
-}
-
-.gallery-item a,
-.gallery-deals a {
-  color: black;
-}
-
-.gallery-item a:hover,
-.gallery-deals a:hover {
-  color: rgb(255, 68, 34);
 }
 
 .gallery-item .image {
@@ -337,9 +345,6 @@ main {
     color: #919191;
   }
 }
-
-
-/* Apps */
 
 .app-item {
   margin-top: 15px;
@@ -404,12 +409,6 @@ main {
   color: rgb(255, 68, 34);
 }
 
-.header-latest-header img {
-  display: block;
-  width: 95px;
-  height: 94px;
-}
-
 .list-latest-header li {
   margin-top: 10px;
 }
@@ -420,43 +419,24 @@ main {
   color: rgb(255, 68, 34);
 }
 
-.list-latest-header li a {
-  font-family: "maquette", Arial, serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
-  color: rgb(91, 91, 91);
-}
-
-.list-latest-header li a:hover {
-  color: black;
-}
-
 /* Latest deals */
 
 .deals {
   margin-bottom: 20px;
 }
 
-
-/*Footer*/
-
 .footer-bottom {
   width: 100%;
   position: fixed;
   bottom: 0;
-	height: 50px;
-	background-color: black;
-	color: grey;
-	font-size: 14px;
-}
-
-.footer-bottom span img {
-	height: 7px;
+  height: 50px;
+  background-color: black;
+  color: grey;
+  font-size: 14px;
 }
 
 small {
-	color: red;
+  color: red;
 }
 
 @media (max-width: 768px) {
@@ -525,7 +505,7 @@ small {
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 5px;

@@ -1,17 +1,4 @@
-<header class="container-fluid-rj">
-     <nav class="show-rj row-rj flex-row-rj flex-justify-between-rj flex-align-center-rj col-md-12">
-        <ul class="flex-row-rj col-md-4">
-          <li><a href="#">Welcome: <%= session[:auth]["name"] %></a></li>
-        </ul>
- <ul class="flex-row-rj col-md-4">
-          <li><%= link_to "HOME", articles_path%></li>
-          <li><%= link_to "WRITE AN ARTICLE", new_article_path%></li>
-        </ul>
- <ul class="flex-row-rj col-md-4">
-          <li><%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %></li>
-        </ul>
-      </nav>
-</header>
+<%= render partial: 'header' %>
   <p class="warning margin-top"><%= flash.notice %></p>
 <div class="container-rj row-slide-rj deals">
 
@@ -34,9 +21,9 @@
                                     <div class="image image-relative">
                                       <img src="<%=asset_path("bg.jpg")%>" alt="">
                                         <div class="header-apps flex-column-rj">
-                                          <h4 class="title-logo"><%= art.title %></h4>
+                                          <h4 class="title-logo"><%= art.title.truncate(50) %></h4>
                                           <div class="description-app">
-                                              <%= art.text.truncate(200)%><br>
+                                              <%= art.text.truncate(100)%><br>
                                               Author: <%= art.author.name %><br>
                                               <button type="button" class="button button1">
                                                   <%= link_to 'Vote', votes_path(article_id: art.id, category_id: @category_id), method: :post, class: 'profile-link'%>
@@ -51,12 +38,4 @@
       <% end %>
 </div>
 
-<footer>
-
-  <div class="footer-bottom flex-row-rj flex-justify-center-rj flex-align-center-rj">
-    <div>
-      <span> Privacy Policy Terms and Conditions ©</span>
-      <span>Copyright 2022. All rights reserved</span>
-    </div>
-  </div>
-</footer>
+<%= render partial: 'footer' %>
