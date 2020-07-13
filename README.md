@@ -15,11 +15,11 @@ The project consists of a Sing up/Login with username. The user is presented wit
 * Home
 ![screenshot](docs/home.png)
 
-* Home
+* Articles in selected category page
 ![screenshot](docs/categorie.png)
 
-* Home
-![screenshot](docs/search.png.png)
+* Search
+![screenshot](docs/search.png)
 
 ## Built With
 
