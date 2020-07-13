@@ -22,18 +22,15 @@ class ArticlesController < ApplicationController
     if @article.save
       tag_ids.each do |t|
         @cat = Categorie.find(t)
-        @ac = Tag.create
-        @ac.article_id = @article.id
-        @ac.category_id = @cat.id
+        @ac = Tag.create(article_id: @article.id, category_id: @cat.id)
         @ac.save
       end
       redirect_to articles_path
-      flash.notice = "Article saved"
+      flash.notice = 'Article saved'
     else
       render :new
-      flash.notice = "Error article not saved"
+      flash.notice = 'Error article not saved'
     end
-
   end
 
   def show
@@ -42,11 +39,11 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    if params[:search]
-     @articles = Article.search(params[:search].downcase).order("created_at DESC").paginate(page: params[:page], per_page: 5)
-   else
-     @articles = Article.all.order('created_at DESC').paginate(page: params[:page], per_page: 5)
-   end
+    @articles = if params[:search]
+                  Article.search(params[:search].downcase).paginate(page: params[:page], per_page: 5)
+                else
+                  Article.all.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+                end
   end
 
   private

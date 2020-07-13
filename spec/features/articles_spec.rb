@@ -30,6 +30,5 @@ RSpec.describe Article, type: :model do
       article.valid?
       expect(article.errors[:image]).to include("can't be blank")
     end
-
   end
 end
