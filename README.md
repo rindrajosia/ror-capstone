@@ -34,7 +34,7 @@ https://herrindra.herokuapp.com
 
 * You can get a local copy of the repository please run the following commands on your terminal:s
 
-$ cd <folder>
+$ cd < folder >
 
 $ git clone https://github.com/rindrajosia/ror-capstone.git
 
