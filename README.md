@@ -1,24 +1,81 @@
-# README
+# Ruby on Rails Capstone Project.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, I built a website based on lifestyle articles. I used a lot of knowledge acquired throughout the Ruby on Rails section, Model/View/Controller concepts, some of HTML & CSS, among other knowledge acquired on Microverse to create an MVP for this app.
 
-Things you may want to cover:
+The project consists of a Sing up/Login with username. The user is presented with the homepage. When the user clicks the category name they can see all articles in that category.
 
-* Ruby version
+# Screen Home Page
 
-* System dependencies
+* Login
+![screenshot](docs/login.png)
 
-* Configuration
+* Register
+![screenshot](docs/register.png)
 
-* Database creation
+* Home
+![screenshot](docs/home.png)
 
-* Database initialization
+* Home
+![screenshot](docs/categorie.png)
 
-* How to run the test suite
+* Home
+![screenshot](docs/search.png.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
+- Ruby v2.7.0
+- Ruby on Rails v5.2.4
 
-* ...
+## Live Demo
+
+https://herrindra.herokuapp.com
+
+## Getting Started
+
+* You can get a local copy of the repository please run the following commands on your terminal:s
+
+$ cd <folder>
+
+$ git clone https://github.com/rindrajosia/ror-capstone.git
+
+* You need to install the required gems:
+
+$ bundle install
+
+* Migrate the database
+
+$ rake db:migrate
+
+* And run the server:
+
+$ rails server
+
+* To navigate on the app you can enter http://localhost:3000/ on your browser, set a new User and you are ready to log in.
+
+#### Test unit
+
+ Open the project folder with the terminal and run ```bundle exec rspec```
+
+
+## Author
+
+👤 **Rindra josia**
+
+* Github: **[@rindrajosia](https://github.com/rindrajosia)**
+* Twitter: **[@rindrajosia](https://twitter.com/josia_rindra)**
+* Linkedin: **[linkedin](https://www.linkedin.com/in/rindra-josia-99b2111a2/)**
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/rindrajosia/ror-capstone/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+ - Project from Microverse
+ - Originally taken from The Odin Project
