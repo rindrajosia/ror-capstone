@@ -14,6 +14,13 @@
     <th>Text</th>
   </tr>
   </thead>
+  <tfoot>
+    <tr>
+    <td colspan="4">
+    <div class="links"><%= will_paginate @articles %></div>
+    </td>
+    </tr>
+</tfoot>
   <tbody>
   <% @articles.each do |article| %>
     <tr>
