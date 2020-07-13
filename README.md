@@ -28,7 +28,7 @@ The project consists of a Sing up/Login with username. The user is presented wit
 
 ## Live Demo
 
-https://herrindra.herokuapp.com
+https://powerful-thicket-68686.herokuapp.com/
 
 ## Getting Started
 
