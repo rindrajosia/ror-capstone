@@ -1,0 +1,47 @@
+<%= render partial: 'header' %>
+
+<div class="container">
+  <%= form_for(@article, html: {multipart: true}) do |f| %>
+<h1>Write an article</h1>
+  <ul>
+  <% @article.errors.full_messages.each do |error| %>
+    <li class="warning"><%= error %></li>
+  <% end %>
+  </ul>
+
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title, class:'input_form' %>
+    </p>
+
+    <p>
+      <%= f.label :text %><br />
+      <%= f.text_area :text %>
+    </p>
+
+    <p class="space">
+      <%= f.label :image, "Attach an Image" %><br />
+      <%= f.file_field :image %>
+    </p>
+
+
+    <p class="space">
+      Categories: (Choose one categorie)<br />
+
+      <input type="checkbox" name="tag_ids[]" value="1" />Tv
+      <input type="checkbox" name="tag_ids[]" value="2" />Radio
+      <input type="checkbox" name="tag_ids[]" value="3" />Car
+      <input type="checkbox" name="tag_ids[]" value="4" />Train
+    </p>
+
+
+    <div class="proceed_button">
+      <%= button_tag(type: 'submit', class: "proceed", id: 'validForm') do%>
+        <span>Create Article</span>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<%= render partial: 'footer' %>

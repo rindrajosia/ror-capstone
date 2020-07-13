@@ -1,0 +1,41 @@
+<%= render partial: 'header' %>
+  <p class="warning margin-top"><%= flash.notice %></p>
+<div class="container-rj row-slide-rj deals">
+
+      <% @cat.each do |art| %>
+            <div class="col-sm-12 col-md-6 col-xl-3">
+                  <div class="gallery-latest app-item">
+                    <ul class="list-latest">
+                              <li>
+                                <div class="image image-relative">
+                                  <%= image_tag art.image.url, class:'bg gradient img-latest-news'%>
+                                </div>
+                              </li>
+                          </ul>
+                      </div>
+              </div>
+                <div class="col-sm-12 col-md-6 col-xl-3">
+                      <div class="gallery-latest app-item">
+                        <ul class="list-latest">
+                                  <li>
+                                    <div class="image image-relative">
+                                      <img src="<%=asset_path("bg.jpg")%>" alt="">
+                                        <div class="header-apps flex-column-rj">
+                                          <h4 class="title-logo"><%= art.title.truncate(50) %></h4>
+                                          <div class="description-app">
+                                              <%= art.text.truncate(100)%><br>
+                                              Author: <%= art.author.name %><br>
+                                              <button type="button" class="button button1">
+                                                  <%= link_to 'Vote', votes_path(article_id: art.id, category_id: @category_id), method: :post, class: 'profile-link'%>
+                                              </button>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </li>
+                              </ul>
+                          </div>
+                  </div>
+      <% end %>
+</div>
+
+<%= render partial: 'footer' %>
