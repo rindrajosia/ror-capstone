@@ -1,0 +1,25 @@
+<%= render partial: 'header' %>
+<%= form_tag(search_page_path, :method => "get", class: "form") do %>
+  <div class="recherche">
+    <%= text_field_tag :search, params[:search], placeholder: "Search articles" %>
+    <%= submit_tag "Search" %>
+  </div>
+<% end %>
+
+<hr />
+<table class="blueTable">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+    </tr>
+  </tbody>
+  <% end %>
+<%= render partial: 'footer' %>

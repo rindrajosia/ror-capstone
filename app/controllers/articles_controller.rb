@@ -41,6 +41,14 @@ class ArticlesController < ApplicationController
     @category_id = params[:id]
   end
 
+  def search
+    if params[:search]
+     @articles = Article.search(params[:search].downcase).order("created_at DESC")
+   else
+     @articles = Article.all.order('created_at DESC')
+   end
+  end
+
   private
 
   def article_params

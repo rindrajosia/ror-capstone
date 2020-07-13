@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#login'
+  get 'articles/search', to: 'articles#search', as: :search_page
   get 'sessions/login', to: 'sessions#login', as: :new_session
   post 'sessions/login', to: 'sessions#check'
   delete 'sessions/logout', to: 'sessions#destroy', as: :destroy_session
