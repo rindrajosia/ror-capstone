@@ -46,13 +46,13 @@ $ bundle install
 
 $ rails db:create
 
-* To seed the database
-
-$ rails db:seed
-
 * Migrate the database
 
 $ rake db:migrate
+
+* To seed the database
+
+$ rails db:seed
 
 * And run the server:
 
