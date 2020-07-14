@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :create_categories
   before_action :signin, except: [:destroy]
   def login
     @user = User.new

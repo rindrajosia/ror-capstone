@@ -42,6 +42,14 @@ $ git clone https://github.com/rindrajosia/ror-capstone.git
 
 $ bundle install
 
+* Create database
+
+$ rails db:create
+
+* To seed the database
+
+$ rails db:seed
+
 * Migrate the database
 
 $ rake db:migrate

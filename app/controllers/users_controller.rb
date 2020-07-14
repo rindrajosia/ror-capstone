@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :create_categories
   before_action :signin
   def new
     @user = User.new

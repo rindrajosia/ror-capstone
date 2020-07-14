@@ -13,4 +13,8 @@ class Article < ApplicationRecord
   def self.search(search)
     where('lower(title) LIKE ?', "%#{search}%")
   end
+
+  def number_of_votes
+    votes.count
+  end
 end

@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :current_user
-  before_action :create_categories
   def index
     @articles = Article.all
     @popular_article = Vote.popular_article
@@ -19,7 +18,7 @@ class ArticlesController < ApplicationController
       tag_ids = []
       tag_ids << 1
     end
-    if @article.save
+    if @article.save && !@article.image.nil?
       tag_ids.each do |t|
         @cat = Categorie.find(t)
         @ac = Tag.create(article_id: @article.id, category_id: @cat.id)
@@ -34,7 +33,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @cat = list(params[:id])
+    @cat = Categorie.list(params[:id])
     @category_id = params[:id]
   end
 
@@ -50,9 +49,5 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :text, :image)
-  end
-
-  def list(id)
-    Categorie.find(id).articles.order(created_at: :desc).includes(:author)
   end
 end
