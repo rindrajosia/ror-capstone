@@ -7,7 +7,7 @@ class VotesController < ApplicationController
                    else
                      "You can't vote twice the same article"
                    end
-    redirect_to article_path(id: params[:category_id])
+    redirect_to category_path(id: params[:category_id])
   end
 
   def show; end

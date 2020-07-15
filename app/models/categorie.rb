@@ -3,10 +3,12 @@ class Categorie < ApplicationRecord
   has_many :articles, through: :tags, source: 'article'
 
   def self.priority_ordered
-    Categorie.order(priority: :desc).includes(:articles).limit(4)
+    Categorie.ordered_priority.includes(:articles).limit(4)
   end
 
   def self.list(id)
-    Categorie.find(id).articles.order(created_at: :desc).includes(:author)
+    Categorie.find(id).articles.ordered_articles.includes(:author)
   end
+
+  scope :ordered_priority, -> { order(priority: :desc) }
 end

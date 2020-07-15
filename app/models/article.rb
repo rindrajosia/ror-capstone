@@ -11,10 +11,25 @@ class Article < ApplicationRecord
   validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png']
 
   def self.search(search)
-    where('lower(title) LIKE ?', "%#{search}%")
+    @articles = if search
+                  search = search.downcase
+                  Article.where('lower(title) LIKE ?', "%#{search}%")
+                else
+                  Article.all.ordered_articles
+                end
   end
 
   def number_of_votes
     votes.count
   end
+
+  def self.last_art(param)
+    article = if param
+                  Article.find(param)
+                else
+                  Article.last.includes(:author)
+                end
+  end
+
+  scope :ordered_articles, -> { order(created_at: :desc) }
 end

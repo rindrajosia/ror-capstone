@@ -1,0 +1,22 @@
+<%= render partial: 'header' %>
+
+  <p class="warning margin-top"><%= flash.notice %></p>
+
+  <div class="cat-cont-art">
+    <% @cat.each do |art| %>
+      <div class="cat-art-image" style="background-image: url(<%= art.image.url %>);">
+      </div>
+      <div class="cat-art">
+        <ul>
+          <li> <a href="#" class="cat-art-title"><%= art.title.truncate(50) %></a></li>
+          <li><%= art.text.truncate(200)%>
+          </li>
+          <li>Author: <span class="author"><%= art.author.name %></span></li>
+          <li><%= link_to 'vote', votes_path(article_id: art.id, category_id: @category_id), method: :post, class: 'myButton'%><span class="vote"> (<%= art.number_of_votes %>)</span></li>
+          <li class="vote"> <%= link_to "Read more", article_path(id: art.id), method: :get%></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+<%= render partial: 'footer' %>
