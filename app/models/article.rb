@@ -24,11 +24,11 @@ class Article < ApplicationRecord
   end
 
   def self.last_art(param)
-    article = if param
-                  Article.find(param)
-                else
-                  Article.last.includes(:author)
-                end
+    if param
+      Article.find(param)
+    else
+      Article.last.includes(:author)
+    end
   end
 
   scope :ordered_articles, -> { order(created_at: :desc) }
