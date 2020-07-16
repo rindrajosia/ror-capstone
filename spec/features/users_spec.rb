@@ -4,7 +4,7 @@ RSpec.feature 'User', type: :feature do
     visit 'http://localhost:3000/users/new'
 
     within find('#new_user') do
-      fill_in 'name', with: 'RSpec'
+      fill_in 'user[name]', with: 'RSpec'
       click_button 'commit'
     end
   rescue StandardError => e
