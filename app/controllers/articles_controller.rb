@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     if @article.save && !@article.image.nil?
       tag_ids.each do |t|
         @cat = Categorie.find(t)
-        @ac = Tag.create(article_id: @article.id, category_id: @cat.id)
+        @ac = Relation.create(article_id: @article.id, category_id: @cat.id)
         @ac.save
       end
       redirect_to article_path(id: @article.id)

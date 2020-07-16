@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'authorid'
   has_many :votes
-  has_many :tags, foreign_key: 'article_id'
-  has_many :categories, through: :tags, source: 'categorie'
+  has_many :relations, foreign_key: 'article_id'
+  has_many :categories, through: :relations, source: 'categorie'
   validates :title, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 100 }
   validates :text, presence: true, length: { minimum: 200 }
   validates :image, presence: true
