@@ -12,7 +12,7 @@
     <div class="categorie" style="background-image: url(<%= image_cat(category)%>);">
       <ul>
         <li><%= link_to category.name, category_path(id: category.id), method: :get, class:"author"%></li>
-        <li><%= art_cat(category) %></li>
+        <li><%= link_to art_cat(category), path_art_cat(category), method: :get, class:"top-title"%></li>
       </ul>
     </div>
   <% end %>

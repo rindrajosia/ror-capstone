@@ -46,4 +46,12 @@ module ArticlesHelper
       '#'
     end
   end
+
+  def path_art_cat(category)
+    if !category.articles.last.nil?
+      article_path(id: category.articles.last.id)
+    else
+      '#'
+    end
+  end
 end

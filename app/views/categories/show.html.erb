@@ -8,7 +8,7 @@
       </div>
       <div class="cat-art">
         <ul>
-          <li> <a href="#" class="cat-art-title"><%= art.title.truncate(50) %></a></li>
+          <li> <%= link_to art.title.truncate(50), path_art(art), method: :get, class:"cat-art-title"%></li>
           <li><%= art.text.truncate(200)%>
           </li>
           <li>Author: <span class="author"><%= art.author.name %></span></li>
