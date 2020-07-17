@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 2020_07_08_150256) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "relations", force: :cascade do |t|
     t.bigint "article_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_tags_on_article_id"
-    t.index ["category_id"], name: "index_tags_on_category_id"
+    t.index ["article_id"], name: "index_relations_on_article_id"
+    t.index ["category_id"], name: "index_relations_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_150256) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "tags", "articles"
-  add_foreign_key "tags", "categories"
+  add_foreign_key "relations", "articles"
+  add_foreign_key "relations", "categories"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "users"
 end

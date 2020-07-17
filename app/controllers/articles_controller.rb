@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :current_user
-  before_action :create_categories
   def index
     @articles = Article.all
     @popular_article = Vote.popular_article
@@ -19,13 +18,13 @@ class ArticlesController < ApplicationController
       tag_ids = []
       tag_ids << 1
     end
-    if @article.save
+    if @article.save && !@article.image.nil?
       tag_ids.each do |t|
         @cat = Categorie.find(t)
-        @ac = Tag.create(article_id: @article.id, category_id: @cat.id)
+        @ac = Relation.create(article_id: @article.id, category_id: @cat.id)
         @ac.save
       end
-      redirect_to articles_path
+      redirect_to article_path(id: @article.id)
       flash.notice = 'Article saved'
     else
       render :new
@@ -34,25 +33,16 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @cat = list(params[:id])
-    @category_id = params[:id]
+    @article = Article.last_art(params[:id])
   end
 
   def search
-    @articles = if params[:search]
-                  Article.search(params[:search].downcase).paginate(page: params[:page], per_page: 5)
-                else
-                  Article.all.order('created_at DESC').paginate(page: params[:page], per_page: 5)
-                end
+    @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 5)
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text, :image)
-  end
-
-  def list(id)
-    Categorie.find(id).articles.order(created_at: :desc).includes(:author)
   end
 end

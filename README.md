@@ -9,17 +9,12 @@ The project consists of a Sing up/Login with username. The user is presented wit
 * Login
 ![screenshot](docs/login.png)
 
-* Register
-![screenshot](docs/register.png)
-
 * Home
 ![screenshot](docs/home.png)
 
 * Articles in selected category page
 ![screenshot](docs/categorie.png)
 
-* Search
-![screenshot](docs/search.png)
 
 ## Built With
 
@@ -28,7 +23,7 @@ The project consists of a Sing up/Login with username. The user is presented wit
 
 ## Live Demo
 
-https://herrindra.herokuapp.com
+https://powerful-thicket-68686.herokuapp.com/
 
 ## Getting Started
 
@@ -42,9 +37,17 @@ $ git clone https://github.com/rindrajosia/ror-capstone.git
 
 $ bundle install
 
+* Create database
+
+$ rails db:create
+
 * Migrate the database
 
 $ rake db:migrate
+
+* To seed the database
+
+$ rails db:seed
 
 * And run the server:
 

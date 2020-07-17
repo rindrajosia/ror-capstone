@@ -1,10 +1,12 @@
 <%= render partial: 'header' %>
-<%= form_tag(search_page_path, :method => "get", class: "form") do %>
-  <div class="recherche">
-    <%= text_field_tag :search, params[:search], placeholder: "Search articles" %>
-    <%= submit_tag "Search" %>
-  </div>
-<% end %>
+<div class="log-div">
+  <%= form_tag(search_page_path, :method => "get", class: "form") do %>
+    <div class="recherche">
+      <%= text_field_tag :search, params[:search], class:"input_form", placeholder: "Search articles" %>
+      <%= submit_tag "Search", class:'search' %>
+    </div>
+  <% end %>
+</div>
 
 <hr />
 <table class="blueTable">
@@ -24,8 +26,8 @@
   <tbody>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
+      <td><%= link_to article.title, article_path(id: article.id), method: :get%></td>
+      <td><%= article.text.truncate(200) %></td>
     </tr>
   </tbody>
   <% end %>

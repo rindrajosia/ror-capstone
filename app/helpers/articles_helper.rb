@@ -25,9 +25,9 @@ module ArticlesHelper
 
   def image_cat(category)
     if !category.articles.last.nil?
-      image_tag category.articles.last.image.url, class: 'bg gradient img-latest-news'
+      category.articles.last.image.url
     else
-      image_tag asset_path('bg.jpg')
+      asset_path('bg.jpg')
     end
   end
 
@@ -36,6 +36,22 @@ module ArticlesHelper
       category.articles.last.title
     else
       'No article'
+    end
+  end
+
+  def path_art(popular_article)
+    if !popular_article.nil?
+      article_path(id: popular_article.id)
+    else
+      '#'
+    end
+  end
+
+  def path_art_cat(category)
+    if !category.articles.last.nil?
+      article_path(id: category.articles.last.id)
+    else
+      '#'
     end
   end
 end

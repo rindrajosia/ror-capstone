@@ -1,0 +1,83 @@
+.search {
+  background-color: #fa6000;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.log-div {
+  width: 300px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  color: black;
+  margin-top: 2%;
+  margin-bottom: 10px;
+}
+
+table.blueTable tfoot .links a {
+  display: inline-block;
+  background: #fa6000;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+table.blueTable {
+  border: 1px solid #fa6000;
+  background-color: #eee;
+  width: 80%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.blueTable td,
+table.blueTable th {
+  border: 1px solid #fa6000;
+  padding: 3px 2px;
+}
+
+table.blueTable tbody td {
+  font-size: 13px;
+}
+
+table.blueTable tr:nth-child(even) {
+  background: #d0e4f5;
+}
+
+table.blueTable thead {
+  background: #fa6000;
+  border-bottom: 2px solid #fa6000;
+}
+
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  border-left: 2px solid #fa6000;
+}
+
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: #fa6000;
+  border-top: 2px solid #444;
+}
+
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+
+table.blueTable tfoot .links {
+  text-align: right;
+}

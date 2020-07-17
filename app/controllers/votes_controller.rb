@@ -1,6 +1,4 @@
 class VotesController < ApplicationController
-  before_action :create_categories
-
   def create
     v = Vote.where(user_id: current_user.id, article_id: params[:article_id])
     @vote = current_user.votes.new(article_id: params[:article_id])
@@ -9,7 +7,7 @@ class VotesController < ApplicationController
                    else
                      "You can't vote twice the same article"
                    end
-    redirect_to article_path(id: params[:category_id])
+    redirect_to category_path(id: params[:category_id])
   end
 
   def show; end
