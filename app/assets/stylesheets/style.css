@@ -22,7 +22,6 @@
 }
 
 .full {
-
   width: 100%;
   height: 56.25vw;
   background-size: cover;
@@ -96,7 +95,7 @@
 .footer-bottom {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 50px;
   background-color: #4e443e;
   font-size: 14px;
