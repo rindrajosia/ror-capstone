@@ -12,7 +12,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: grey;
-  width: calc(100% - 10px);
+  width: 100%;
 }
 
 li {
