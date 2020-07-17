@@ -24,5 +24,11 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:name]).to_not include("can't be blank")
     end
+
+    it 'Create User' do
+      User.create(name: 'josia')
+      user = User.all.first
+      expect(user.name).to eq 'josia'
+    end
   end
 end

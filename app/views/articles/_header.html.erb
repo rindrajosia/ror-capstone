@@ -15,7 +15,7 @@
 
   </div>
   <div class="exit">
-    <%= session[:auth]["name"] %> | <%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %>
+    <%= @current_user.name %> | <%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %>
   </div>
 
 </div>

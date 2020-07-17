@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:auth] = @user
+      session[:auth] = @user.id
       redirect_to articles_path
       flash.notice = "User '#{@user.name}' Saved!"
     else

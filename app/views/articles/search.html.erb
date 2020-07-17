@@ -27,7 +27,7 @@
   <% @articles.each do |article| %>
     <tr>
       <td><%= link_to article.title, article_path(id: article.id), method: :get%></td>
-      <td><%= article.text %></td>
+      <td><%= article.text.truncate(200) %></td>
     </tr>
   </tbody>
   <% end %>
