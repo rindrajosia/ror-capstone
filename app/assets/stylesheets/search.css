@@ -1,5 +1,5 @@
 .search {
-  background-color: #4caf50;
+  background-color: #fa6000;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -20,14 +20,14 @@
 
 table.blueTable tfoot .links a {
   display: inline-block;
-  background: #1c6ea4;
+  background: #fa6000;
   color: #fff;
   padding: 2px 8px;
   border-radius: 5px;
 }
 
 table.blueTable {
-  border: 1px solid #1c6ea4;
+  border: 1px solid #fa6000;
   background-color: #eee;
   width: 80%;
   text-align: left;
@@ -38,7 +38,7 @@ table.blueTable {
 
 table.blueTable td,
 table.blueTable th {
-  border: 1px solid #aaa;
+  border: 1px solid #fa6000;
   padding: 3px 2px;
 }
 
@@ -51,15 +51,15 @@ table.blueTable tr:nth-child(even) {
 }
 
 table.blueTable thead {
-  background: #1c6ea4;
-  border-bottom: 2px solid #444;
+  background: #fa6000;
+  border-bottom: 2px solid #fa6000;
 }
 
 table.blueTable thead th {
   font-size: 15px;
   font-weight: bold;
   color: #fff;
-  border-left: 2px solid #d0e4f5;
+  border-left: 2px solid #fa6000;
 }
 
 table.blueTable thead th:first-child {
@@ -70,7 +70,7 @@ table.blueTable tfoot {
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  background: #d0e4f5;
+  background: #fa6000;
   border-top: 2px solid #444;
 }
 

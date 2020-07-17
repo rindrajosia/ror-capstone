@@ -49,10 +49,10 @@
 
 .myButton {
   box-shadow: 0 10px 14px -7px #3e7327;
-  background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-  background-color: #77b55a;
+  background: linear-gradient(to bottom, #fa6000 5%, #fa6000 100%);
+  background-color: #fa6000;
   border-radius: 4px;
-  border: 1px solid #4b8f29;
+  border: 1px solid #fa6000;
   display: inline-block;
   cursor: pointer;
   color: #fff;
@@ -64,8 +64,8 @@
 }
 
 .myButton:hover {
-  background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
-  background-color: #72b352;
+  background: linear-gradient(to bottom, #fa6000 5%, #fa6000 100%);
+  background-color: #fa6000;
 }
 
 .myButton:active {
