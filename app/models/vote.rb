@@ -1,6 +1,8 @@
 class Vote < ApplicationRecord
   belongs_to :user
   belongs_to :article
+  validates :user_id, presence: true
+  validates :article_id, presence: true
 
   def self.popular_article
     count_hash = Vote.group(:article_id).count
