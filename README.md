@@ -23,7 +23,7 @@ The project consists of a Sing up/Login with username. The user is presented wit
 
 ## Live Demo
 
-https://ancient-ridge-02578.herokuapp.com/sessions/login
+https://guarded-cove-43337.herokuapp.com/
 
 ## Getting Started
 
