@@ -47,7 +47,7 @@
   font-size: 14px;
 }
 
-.myButton {
+.but {
   box-shadow: 0 10px 14px -7px #3e7327;
   background: linear-gradient(to bottom, #fa6000 5%, #fa6000 100%);
   background-color: #fa6000;
@@ -63,12 +63,12 @@
   text-shadow: 0 1px 0 #5b8a3c;
 }
 
-.myButton:hover {
+.but:hover {
   background: linear-gradient(to bottom, #fa6000 5%, #fa6000 100%);
   background-color: #fa6000;
 }
 
-.myButton:active {
+.but:active {
   position: relative;
   top: 1px;
 }

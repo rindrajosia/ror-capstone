@@ -23,7 +23,7 @@ The project consists of a Sing up/Login with username. The user is presented wit
 
 ## Live Demo
 
-https://powerful-thicket-68686.herokuapp.com/
+https://ancient-ridge-02578.herokuapp.com/sessions/login
 
 ## Getting Started
 
