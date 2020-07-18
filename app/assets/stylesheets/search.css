@@ -29,7 +29,8 @@ table.blueTable tfoot .links a {
 table.blueTable {
   border: 1px solid #fa6000;
   background-color: #eee;
-  width: 80%;
+  max-width: 300px;
+  word-wrap: break-word;
   text-align: left;
   border-collapse: collapse;
   margin-left: auto;

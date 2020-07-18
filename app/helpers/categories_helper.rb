@@ -7,7 +7,7 @@ module CategoriesHelper
         html += "<div class='cat-art-image' style='background-image: url(#{art.image.url});'>".html_safe
         html += "</div><div class='cat-art'><ul> <li>".html_safe
         html += link_to art.title.truncate(50), path_art(art), method: :get, class: 'cat-art-title'
-        html += '</li><li>'.html_safe + art.text.truncate(200)
+        html += '</li><li class="word-wrap">'.html_safe + art.text.truncate(200)
         html += "</li> <li> Author:<span class='author'>".html_safe + art.author.name
         html += '</span></li><li>'.html_safe
         html += link_to 'vote', votes_path(article_id: art.id, category_id: @category_id), method: :post, class: 'but'
@@ -18,7 +18,7 @@ module CategoriesHelper
       else
         html += "<div class='cat-art'><ul><li>".html_safe
         html += link_to art.title.truncate(50), path_art(art), method: :get, class: 'cat-art-title'
-        html += '</li><li>'.html_safe + art.text.truncate(200)
+        html += '</li><li class="word-wrap">'.html_safe + art.text.truncate(200)
         html += "</li><li> Author:<span class='author'>".html_safe + art.author.name
         html += '</span></li><li>'.html_safe
         html += link_to 'vote', votes_path(article_id: art.id, category_id: @category_id), method: :post, class: 'but'

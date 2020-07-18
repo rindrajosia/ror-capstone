@@ -7,9 +7,11 @@
     <div class="art">
       <ul>
         <li> <a href="#" class="art-title"><%= @article.title %></a></li>
-        <li><%= @article.text%>
+        <li class="word-wrap"><%= @article.text%>
         </li>
         <li>Author: <span class="author"><%= @article.author.name %></span></li>
+        <li><%= link_to 'vote', votes_path(article_id: @article.id), method: :post, class: 'but'%>
+        <span class='vote'> (<%= @article.number_of_votes %>)</span> </li>
       </ul>
     </div>
 </div>
