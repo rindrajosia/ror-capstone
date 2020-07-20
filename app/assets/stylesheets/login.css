@@ -1,0 +1,41 @@
+.log {
+  width: 300px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  color: black;
+  margin-top: 10%;
+}
+
+.input_form,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.proceed {
+  background-color: #fa6000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.proceed:hover {
+  background-color: #fa6000;
+}
+
+.register {
+  color: #fa6000;
+  font-size: 14px;
+}

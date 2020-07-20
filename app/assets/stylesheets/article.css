@@ -1,0 +1,53 @@
+.cont-art {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.art-image {
+  width: 100%;
+  height: 270px;
+  background-size: 100% 100%;
+}
+
+.art {
+  width: 100%;
+  color: black;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.art-title {
+  color: black;
+  font-weight: bold;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.art ul {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.art ul li {
+  margin-top: 10px;
+}
+
+.author {
+  color: #fa6000;
+  font-size: 14px;
+}
+
+.bottom {
+  margin-bottom: 50px;
+  height: 10px;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}

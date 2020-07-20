@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="logo">
+    <img src="<%=asset_path('eagles.ico')%>" alt="logo">
+  </div>
+  <div class="menu">
+    <ul>
+      <li><%= link_to "HOME", articles_path%></li>
+      <li><%= link_to "NEW", new_article_path%></li>
+      <li><%= link_to "SEARCH", search_page_path%></li>
+      <li><%= link_to "TRAIN", category_path(id: 4), method: :get%></li>
+      <li><%= link_to "CAR", category_path(id: 3), method: :get%></li>
+      <li><%= link_to "RADIO", category_path(id: 2), method: :get%></li>
+      <li><%= link_to "TV", category_path(id: 1), method: :get%></li>
+    </ul>
+
+  </div>
+  <div class="exit">
+    <%= @current_user.name %> | <%= link_to "LOGOUT", destroy_session_path, data:{method: :delete} %>
+  </div>
+
+</div>

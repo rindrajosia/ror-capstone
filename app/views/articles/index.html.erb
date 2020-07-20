@@ -1,0 +1,21 @@
+<%= render partial: 'header' %>
+
+<div class="full" style="background-image: url(<%= image_art(@popular_article)%>);">
+  <ul>
+    <li><%= link_to tilte_art(@popular_article), path_art(@popular_article), method: :get, class:"top-title"%></li>
+    <li class="top-text"><%= text_art(@popular_article)%></li>
+  </ul>
+</div>
+
+<div class="categorie-cont">
+  <% @categories.each do |category| %>
+    <div class="categorie" style="background-image: url(<%= image_cat(category)%>);">
+      <ul>
+        <li><%= link_to category.name, category_path(id: category.id), method: :get, class:"author"%></li>
+        <li><%= link_to art_cat(category), path_art_cat(category), method: :get, class:"top-title"%></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<%= render partial: 'footer' %>

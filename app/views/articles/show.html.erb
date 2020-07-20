@@ -1,0 +1,21 @@
+<%= render partial: 'header' %>
+
+  <p class="warning margin-top"><%= flash.notice %></p>
+  <div class="cont-art">
+    <div class="art-image" style="background-image: url(<%= @article.image.url %>);">
+    </div>
+    <div class="art">
+      <ul>
+        <li> <a href="#" class="art-title"><%= @article.title %></a></li>
+        <li class="word-wrap"><%= @article.text%>
+        </li>
+        <li>Author: <span class="author"><%= @article.author.name %></span></li>
+        <li><%= link_to 'vote', votes_path(article_id: @article.id), method: :post, class: 'but'%>
+        <span class='vote'> (<%= @article.number_of_votes %>)</span> </li>
+      </ul>
+    </div>
+</div>
+<div class="bottom">
+</div>
+
+<%= render partial: 'footer' %>

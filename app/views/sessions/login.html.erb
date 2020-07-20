@@ -1,0 +1,13 @@
+<div class="log">
+  <%= form_for @user, html: {class:'box'} ,url: sessions_login_path do |f|%>
+  <h1>Login</h1>
+  <p class="warning"><%= flash.notice %></p>
+    <p>
+      <%= f.text_field :name, placeholder: 'Name', class:"input_form"%>
+    </p>
+    <div class="proceed_button">
+      <%= f.submit "Log in", class:'proceed' %>
+      <%= link_to 'Register', new_user_path(), class:"register" %>
+    </div>
+  <% end %>
+</div>
