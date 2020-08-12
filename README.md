@@ -23,7 +23,7 @@ The project consists of a Sing up/Login with username. The user is presented wit
 
 ## Live Demo
 
-https://guarded-cove-43337.herokuapp.com/sessions/login
+https://frozen-lowlands-65547.herokuapp.com/
 
 ## Getting Started
 
